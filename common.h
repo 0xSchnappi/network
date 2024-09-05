@@ -22,7 +22,7 @@
 /* 心跳包配置 */
 #define KEEP_ALIVE_TIME 10
 #define KEEP_ALIVE_INTERVAL 3
-#define KEEP_ALIVE_PROBETIMES 3
+#define KEEP_ALIVE_PROBETIMES 3     /* 心跳包最大尝试次数 */
 
 #include <stdint.h>
 /* 心跳包 */

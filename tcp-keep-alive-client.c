@@ -2,9 +2,11 @@
  * @Author: 0xSchnappi 952768182@qq.com
  * @Date: 2024-09-04 10:09:20
  * @LastEditors: 0xSchnappi 952768182@qq.com
- * @LastEditTime: 2024-09-04 16:59:16
+ * @LastEditTime: 2024-09-05 14:16:37
  * @FilePath: /network/tcp-keep-alive-client.c
  * @Description: 心跳包客户端，保持连接客户端
+ *
+ * 功能核心：使用select创建定时器，定时发送心跳包
  *
  * Copyright (c) 2024 by github.com/0xSchnappi, All Rights Reserved.
  */
@@ -61,7 +63,7 @@ int main() {
       perror("Select");
     }
 
-    if (rc == 0) {
+    if (rc == 0) { // select到达KEEP_ALIVE_TIME时间时，就会返回0
       if (++heartbeats > KEEP_ALIVE_PROBETIMES) {
         perror("Connect Dead");
       }
