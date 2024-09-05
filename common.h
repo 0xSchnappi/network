@@ -2,7 +2,7 @@
  * @Author: 0xSchnappi 952768182@qq.com
  * @Date: 2024-09-04 10:23:12
  * @LastEditors: 0xSchnappi 952768182@qq.com
- * @LastEditTime: 2024-09-04 16:59:11
+ * @LastEditTime: 2024-09-05 14:32:37
  * @FilePath: /network/common.h
  * @Description: 定义服务的配置
  *
@@ -35,3 +35,12 @@ struct MessageObject {
 #define MSG_PONG 2
 #define MSG_TYPE1 11
 #define MSG_TYPE2 21
+
+
+/* 设置SO_LINGER */
+struct linger
+{
+  int l_onoff;    /* 0=off, nonzero=on*/
+  int l_linger;   /* linger time, POSIX specifies units as seconds */
+};
+
